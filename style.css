@@ -1,0 +1,43 @@
+section{
+    text-align: center;
+    background-color: rgb(155, 152, 148);
+}
+.cell{
+    border: 2px solid rgb(155, 152, 148);
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 60px;
+}
+.game-container{
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    width: 910px;
+    margin: 10px auto;
+    background-color: rgb(112, 109, 107);
+    color: black;
+}
+.game-title{
+    font-size: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:50px auto;
+}
+.display-player{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:auto;
+}
+.game-restart{
+    background-color: rgb(155, 152, 148);
+    width: 300px;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 25px;
+    padding-top: 10px;
+}
+.game-status {
+    font-size: 50px;
+    color: #232d27;
+    margin: 20px auto;
+}
