@@ -41,3 +41,6 @@ section{
     color: #232d27;
     margin: 20px auto;
 }
+.cell:hover{
+    transform: scale(1.01);
+}
