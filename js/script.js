@@ -1,31 +1,28 @@
-let winComb = [[0, 1, 2],
-[3, 4, 5],
-[6, 7, 8], 
-[0, 4, 8],
-[0, 3, 6], 
-[1, 4, 7],
-[2, 5, 8],
-[2, 4, 6]];
+let winComb = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 4, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6]
+];
 
 let gameStatus = true;
-
 let turnNumber = 0;
-
 let currentPlayer = "нолик";
-
 let restartButton = document.querySelector('.game-restart');
-
-const drawMsg = `Ничья`;
-
+let cells = game.querySelectorAll('.cell');
 let crossMas = [];
 let zeroMas = [];
-
+const drawMsg = `Ничья`;
 const game = document.querySelector('.game-container');
-let cells = game.querySelectorAll('.cell');
 
 restartButton.addEventListener('click', restartGame);
 
 let counter = 0;
+
 for(let cell of cells){
     cell.addEventListener('click', turnHandler, {once: true});
     cell.dataset.index = counter;
@@ -44,8 +41,8 @@ function addImage(cell){
     }
     else{
         image.src = "img/cross.png";
-    } 
-    cell.appendChild(image); 
+    }
+    cell.appendChild(image);
 }
 
 function turnHandler(){
@@ -78,7 +75,7 @@ function checkWin(){
         gameStatus = false;
         cells.forEach(cell => {
             cell.removeEventListener('click', turnHandler)
-        }); 
+        });
     }
 
     else if(zeroWin){
@@ -86,7 +83,7 @@ function checkWin(){
         gameStatus = false;
         cells.forEach(cell => {
             cell.removeEventListener('click', turnHandler)
-        }); 
+        });
     }
 
     else{
@@ -118,6 +115,3 @@ function isSubset(arr1, arr2) {
     const set2 = new Set(arr2);
     return arr1.every(elem => set2.has(elem));
 }
-
-
-

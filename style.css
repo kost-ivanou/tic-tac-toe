@@ -1,16 +1,20 @@
-section{
-    text-align: center;
-    background-color: rgb(155, 152, 148);
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* прописал флексбокс для контейнера сайта, это оптимально и хорошо */
 }
-.cell{
-    border: 2px solid rgb(155, 152, 148);
-    width: 300px;
-    height: 300px;
-    cursor: pointer;
-    line-height: 100px;
-    font-size: 60px;
+
+/* сохраняй стили в том порядке, в котором у тебя лежат элементы в html */
+
+.game-title{
+    font-size: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:50px auto;
 }
-.game-container{
+
+.game-container {
     display:grid;
     grid-template-columns: repeat(3, auto);
     width: 910px;
@@ -18,16 +22,38 @@ section{
     background-color: rgb(112, 109, 107);
     color: black;
 }
-.game-title{
-    font-size: 50px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin:50px auto;
+
+.cell {
+    border: 2px solid rgb(155, 152, 148);
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 60px;
 }
+
+.cell:hover{
+    transform: scale(1.01);
+}
+
+.cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .display-player{
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin:auto;
 }
+
+.game-status {
+    font-size: 50px;
+    color: #232d27;
+    margin: 20px auto;
+}
+
 .game-restart{
     background-color: rgb(155, 152, 148);
     width: 300px;
@@ -35,17 +61,5 @@ section{
     height: 50px;
     font-size: 25px;
     padding-top: 10px;
-}
-.game-status {
-    font-size: 50px;
-    color: #232d27;
-    margin: 20px auto;
-}
-.cell:hover{
-    transform: scale(1.01);
-}
-.cell img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    text-align: center;
 }
