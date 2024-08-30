@@ -21,6 +21,7 @@
     margin: 10px auto;
     background-color: rgb(112, 109, 107);
     color: black;
+    position: relative; /* Добавил для абсолютного позиционирования линий */
 }
 
 .cell {
@@ -60,6 +61,48 @@
     border-radius: 5px;
     height: 50px;
     font-size: 25px;
-    padding-top: 10px;
+    padding: 7px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-restart:hover {
+    transform: scale(1.1);
+}
+
+/* Стили победных линий */
+
+.line {
+    position: absolute;
+    background-color: #000;
+    width: 10px;
+    height: 0;
+    transform-origin: 50%;
+    z-index: 1;
+}
+
+.horizontal {
+    width: 100%;
+    height: 6px;
+}
+
+.vertical {
+    height: 100%;
+    width: 6px;
+}
+
+.diagonal {
+    width: 140%;
+    height: 6px;
+    transform: rotate(45deg);
+}
+
+.diagonal-reverse {
+    width: 140%;
+    height: 6px;
+    transform: rotate(-45deg);
+}
+
+.line-hidden {
+    display: none;
 }
